@@ -9,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 @pytest.fixture(scope="function")
 def browser():
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
     driver.get("https://qa-desk.stand.praktikum-services.ru/")
 
     yield driver
