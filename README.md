@@ -1,1 +1,7 @@
-# Sprint_5
+test_successful_user_registration_with_valid_email - Успешная регистрация пользователя с email по правильной маске
+test_registration_with_invalid_email_format - Попытка регистрации с email не соответствующем формату *@*.*
+test_registration_with_existing_email - Попытка регистрации уже существующего пользователя
+test_successful_user_login - Успешный вход зарегистрированного пользователя
+test_successful_user_logout - Успешный выход пользователя из системы
+test_create_ad_by_authorized_user - Создание объявления авторизованным пользователем
+test_create_ad_requires_authorization - Попытка создания объявления неавторизованным пользователем
