@@ -1,5 +1,5 @@
-import random
-import time
+from .urls import BASE_URL
+from .helpers import generate_email
 from .locators import Locators
 import pytest
 from selenium import webdriver
@@ -9,8 +9,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 @pytest.fixture(scope="function")
 def browser():
-    driver = webdriver.Chrome()
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver = webdriver.Firefox()
+    driver.get(BASE_URL)
 
     yield driver
 
@@ -18,14 +18,9 @@ def browser():
 
 
 @pytest.fixture
-def generate_email():
-    return f"mail123{random.randint(1000, 9999)}@mail.com"
+def registration_user(browser):
 
-
-@pytest.fixture
-def registration_user(browser, generate_email):
-
-    email = generate_email
+    email = generate_email()
     password = "password123"
 
     browser.find_element(*Locators.LOGIN_BTN).click()
